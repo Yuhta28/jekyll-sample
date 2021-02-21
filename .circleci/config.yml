@@ -33,14 +33,14 @@ jobs:
           at: ./
       - add_ssh_keys: # (d4)
           fingerprints:
-            - cf:61:c6:58:f4:8c:51:6a:2a:df:68:b4:f0:1a:15:b1
+            - 2c:57:df:73:f7:2d:02:e2:82:19:2f:5b:56:59:62:2b
       - run: # (d5)
           name: gh-pagesブランチにプッシュ
           command: |
             cd _site
             git init
             git config user.name ${CIRCLE_USERNAME}
-            git config user.email circleci@example.com
+            git config user.email yuta_mori@outlook.jp
             git add .
             git commit -m "[ci skip] deploy ${CIRCLE_SHA1}"
             git push --force ${CIRCLE_REPOSITORY_URL} master:gh-pages
